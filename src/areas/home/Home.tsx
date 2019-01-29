@@ -9,8 +9,10 @@ export class Home extends Component {
       <div className="Home">
         <img src={logoR} className="react-logo" alt="React logo" />
         <img src={logoTs} className="typescript-logo" alt="TypeScript logo" />
-        <h1>TypeScript Overview and React Gotchas</h1>
-        <h2>Brian Mitchell</h2>
+        <h1>
+          A (<small>tiny</small>) Intro to TypeScript with React
+        </h1>
+        <h2 className="uk-margin-remove">Brian Mitchell</h2>
         <p>
           Bird site:{' '}
           <a

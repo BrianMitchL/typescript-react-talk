@@ -22,7 +22,7 @@ export class SimpleHelpers extends Component<{}, SimpleHelpersState> {
 
   render() {
     return (
-      <div className="Pure">
+      <>
         <h1>Simple Helpers</h1>
         <fieldset className="uk-fieldset">
           <legend className="uk-legend">
@@ -59,7 +59,7 @@ export class SimpleHelpers extends Component<{}, SimpleHelpersState> {
         <p>
           <strong>{display(this.state.text, this.state.num)}</strong>
         </p>
-      </div>
+      </>
     );
   }
 }

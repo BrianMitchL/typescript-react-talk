@@ -16,8 +16,8 @@ const routes: Route[] = [
     title: 'Pure'
   },
   {
-    path: '/react-gotchas',
-    title: 'React Gotchas'
+    path: '/event',
+    title: 'Event'
   }
 ];
 

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
+  Redirect,
   Route,
-  RouteComponentProps
+  Switch
 } from 'react-router-dom';
+import { EventPage } from './areas/event/EventPage';
 import { Home } from './areas/home/Home';
 import { Header } from './areas/header/Header';
-import { Pure } from './areas/pure/Pure';
+import { SimpleHelpers } from './areas/pure/SimpleHelpers';
 
 class App extends Component {
   render() {
@@ -14,16 +16,14 @@ class App extends Component {
       <Router>
         <>
           <Route component={Header} />
-          <Route exact path="/" component={Home} />
 
           <div className="uk-container">
-            <Route path="/pure" component={Pure} />
-            <Route
-              path="/react-gotchas"
-              component={({ match }: RouteComponentProps<any>) => (
-                <h3>Requested Param: {match.params.id}</h3>
-              )}
-            />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/pure" component={SimpleHelpers} />
+              <Route exact path="/event/:match?" component={EventPage} />
+              <Redirect to="/" />
+            </Switch>
           </div>
         </>
       </Router>
