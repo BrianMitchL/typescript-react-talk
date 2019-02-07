@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { api, EventData } from './api';
 import { Event } from './Event';
 import { RouteComponentProps } from 'react-router';
@@ -8,39 +8,31 @@ export interface Match {
   match?: string;
 }
 
-interface State extends EventData {
-  loading: boolean;
-}
+export const EventPage = (props: RouteComponentProps<Match>) => {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState<EventData[]>([]);
 
-const initialState: State = {
-  loading: true,
-  meetup: '',
-  title: '',
-  url: '',
-  date: '',
-  tag: 'Web',
-  details: ''
-};
-
-export class EventPage extends Component<RouteComponentProps<Match>, State> {
-  state = initialState;
-
-  componentDidMount(): void {
-    this.fetchData();
-  }
-
-  fetchData = async (): Promise<void> => {
+  const fetchData = async (): Promise<void> => {
+    setLoading(true);
     const data = await api();
-    this.setState({ loading: false, ...data });
+    setData(data);
+    setLoading(false);
   };
 
-  render() {
-    const { loading, ...data } = this.state;
-    const { match } = this.props.match.params;
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-    if (loading) {
-      return <Loader />;
-    }
-    return <Event {...data} match={match} />;
+  const { match } = props.match.params;
+
+  if (loading) {
+    return <Loader />;
   }
-}
+  return (
+    <>
+      {data.map(d => (
+        <Event key={d.url} {...d} match={match} />
+      ))}
+    </>
+  );
+};
