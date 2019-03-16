@@ -27,6 +27,14 @@ export const api = (timeout: number = 1000): Promise<EventData[]> => {
         date: '2018-02-27',
         tag: 'Native',
         details: 'Lorem ipsum... it was great!'
+      },
+      {
+        meetup: 'JavaScript MN',
+        title: 'Monthy Meetup: Some Cool Talks',
+        url: 'https://www.meetup.com/JavaScriptMN/events/tqfvfqyzfbkc/',
+        date: '2018-03-27',
+        tag: 'Web',
+        details: 'Lorem ipsum... hopefully it goes well 😉'
       }
     ];
 

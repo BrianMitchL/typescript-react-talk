@@ -12,6 +12,10 @@ const routes: Route[] = [
     title: 'Home'
   },
   {
+    path: '/typescript',
+    title: 'TypeScript Overview'
+  },
+  {
     path: '/pure',
     title: 'Pure'
   },

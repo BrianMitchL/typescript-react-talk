@@ -7,9 +7,7 @@ export const Home = () => (
   <div className="Home">
     <img src={logoR} className="react-logo" alt="React logo" />
     <img src={logoTs} className="typescript-logo" alt="TypeScript logo" />
-    <h1>
-      A (<small>tiny</small>) Intro to TypeScript with React
-    </h1>
+    <h1>An Intro to TypeScript with React</h1>
     <h2 className="uk-margin-remove">Brian Mitchell</h2>
     <p>
       Bird site:{' '}
@@ -23,7 +21,7 @@ export const Home = () => (
       <br />
       Web site:{' '}
       <a href="https://brianm.me" target="_blank" rel="noopener noreferrer">
-        {'https://brianm.me'}
+        https://brianm.me
       </a>
     </p>
   </div>

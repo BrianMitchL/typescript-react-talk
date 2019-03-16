@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { api, EventData } from './api';
 import { Event } from './Event';
 import { RouteComponentProps } from 'react-router';
@@ -8,22 +8,25 @@ export interface Match {
   match?: string;
 }
 
-export const EventPage = (props: RouteComponentProps<Match>) => {
+export const EventPage: FC<RouteComponentProps<Match>> = ({
+  match: {
+    params: { match }
+  }
+}) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<EventData[]>([]);
 
-  const fetchData = async (): Promise<void> => {
+  const fetchData = (): void => {
     setLoading(true);
-    const data = await api();
-    setData(data);
-    setLoading(false);
+    api().then(data => {
+      setData(data);
+      setLoading(false);
+    });
   };
 
   useEffect(() => {
     fetchData();
   }, []);
-
-  const { match } = props.match.params;
 
   if (loading) {
     return <Loader />;

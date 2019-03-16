@@ -9,6 +9,7 @@ import { EventPage } from './areas/event/EventPage';
 import { Home } from './areas/home/Home';
 import { Header } from './areas/header/Header';
 import { SimpleHelpers } from './areas/pure/SimpleHelpers';
+import { TypeScript } from './areas/typescript/TypeScript';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <div className="uk-container">
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/typescript" component={TypeScript} />
               <Route exact path="/pure" component={SimpleHelpers} />
               <Route exact path="/event/:match?" component={EventPage} />
               <Redirect to="/" />
