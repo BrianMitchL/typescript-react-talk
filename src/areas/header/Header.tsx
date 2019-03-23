@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 
 interface Route {
@@ -25,7 +25,7 @@ const routes: Route[] = [
   }
 ];
 
-export const Header = ({ location }: RouteComponentProps<any>) => (
+export const Header: FC<RouteComponentProps> = ({ location }) => (
   <nav className="uk-navbar-container">
     <div className="uk-navbar-left">
       <ul className="uk-navbar-nav">

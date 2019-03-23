@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { EventData } from './api';
 import './Event.css';
 import { Match } from './EventPage';
 
-export const Event = ({ match, ...event }: EventData & Match) => (
+export const Event: FC<EventData & Match> = ({ match, ...event }) => (
   <>
     <h2>
       <a href={event.url}>{event.title}</a>

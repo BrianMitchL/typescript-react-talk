@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import logoR from './logo.svg';
 import logoTs from './ts-logo.svg';
 import './Home.css';
 
-export const Home = () => (
+export const Home: FC = () => (
   <div className="Home">
     <img src={logoR} className="react-logo" alt="React logo" />
     <img src={logoTs} className="typescript-logo" alt="TypeScript logo" />

@@ -1,7 +1,7 @@
-import React, { ChangeEventHandler, useState } from 'react';
+import React, { ChangeEventHandler, FC, useState } from 'react';
 import { display } from './simple-helpers';
 
-export const SimpleHelpers = () => {
+export const SimpleHelpers: FC = () => {
   const [text, setText] = useState('Hello JavaScript');
   const [num, setNum] = useState(1);
 
