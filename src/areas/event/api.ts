@@ -9,8 +9,8 @@ export interface EventData {
   details: string;
 }
 
-export const api = (timeout: number = 1000): Promise<EventData[]> => {
-  return new Promise(resolve => {
+export const api = (timeout: number = 500): Promise<EventData[]> =>
+  new Promise(resolve => {
     const data: EventData[] = [
       {
         meetup: 'JavaScript MN',
@@ -42,4 +42,3 @@ export const api = (timeout: number = 1000): Promise<EventData[]> => {
       resolve(data);
     }, timeout);
   });
-};

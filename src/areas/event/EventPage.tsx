@@ -3,10 +3,7 @@ import { api, EventData } from './api';
 import { Event } from './Event';
 import { RouteComponentProps } from 'react-router';
 import { Loader } from './Loader';
-
-export interface Match {
-  match?: string;
-}
+import { Match } from '../../App';
 
 export const EventPage: FC<RouteComponentProps<Match>> = ({
   match: {
@@ -16,16 +13,12 @@ export const EventPage: FC<RouteComponentProps<Match>> = ({
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<EventData[]>([]);
 
-  const fetchData = (): void => {
+  useEffect(() => {
     setLoading(true);
     api().then(data => {
       setData(data);
       setLoading(false);
     });
-  };
-
-  useEffect(() => {
-    fetchData();
   }, []);
 
   if (loading) {

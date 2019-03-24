@@ -1,11 +1,9 @@
-export const displayNumber = (num: number): string => {
-  return num.toLocaleString();
-};
-
 export const displayAsDate = (num: number): string => {
   const day: Date = new Date(num * 1000);
-  const prefix: string =
-    day.getTime() < new Date().getTime() ? 'since' : 'until';
+  const prefix = day.getTime() < new Date().getTime() ? 'since' : 'until';
+  // if (prefix === 'test') {
+  //   return 'impossible';
+  // }
   return `${prefix} ${day.toLocaleDateString()}`;
 };
 
@@ -14,7 +12,7 @@ export const makeEnthusiasm = (num: number): string => {
     return '!'.repeat(num);
   }
   if (num < 1e6) {
-    return `! ✖️ ${displayNumber(num)}`;
+    return `! ✖️ ${num.toLocaleString()}`;
   }
   return ` (🥳-ing ${displayAsDate(num)})`;
 };

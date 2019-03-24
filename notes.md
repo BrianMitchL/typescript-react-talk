@@ -1,6 +1,11 @@
+## Intro
+
+## TypeScript Overview
+
 ## Pure
-- Pure functions
 - Forms
+- Type inference
+- Pure functions
 
 ## Event
 - Promises / async/await

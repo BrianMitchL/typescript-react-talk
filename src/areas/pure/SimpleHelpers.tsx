@@ -4,6 +4,8 @@ import { display } from './simple-helpers';
 export const SimpleHelpers: FC = () => {
   const [text, setText] = useState('Hello JavaScript');
   const [num, setNum] = useState(1);
+  // const [array, setArray] = useState([]);
+  // setArray(['this is just a string']);
 
   const handleNumberChange: ChangeEventHandler<HTMLInputElement> = e => {
     setNum(Number(e.currentTarget.value));
@@ -25,7 +27,7 @@ export const SimpleHelpers: FC = () => {
             type="text"
             id="text"
             className="uk-input"
-            autoComplete={'off'}
+            autoComplete="off"
             value={text}
             onChange={handleTextChange}
           />
@@ -39,7 +41,7 @@ export const SimpleHelpers: FC = () => {
             className="uk-input"
             min={0}
             step={1}
-            autoComplete={'off'}
+            autoComplete="off"
             value={num}
             onChange={handleNumberChange}
           />

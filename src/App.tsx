@@ -11,6 +11,10 @@ import { Header } from './areas/header/Header';
 import { SimpleHelpers } from './areas/pure/SimpleHelpers';
 import { TypeScript } from './areas/typescript/TypeScript';
 
+export interface Match {
+  match?: string;
+}
+
 const App: FC = () => (
   <Router>
     <>
