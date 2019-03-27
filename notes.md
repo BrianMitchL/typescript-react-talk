@@ -10,8 +10,8 @@
 ## Event
 - Promises / async/await
 - Generics
-- Union Types
 - `extends`
+- Union Types
 - Intersection Types
 
 - Change date type to `Date`

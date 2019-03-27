@@ -18,7 +18,7 @@ export const api = (timeout: number = 500): Promise<EventData[]> =>
         url: 'https://www.meetup.com/JavaScriptMN/events/tqfvfqyzcbnc/',
         date: '2018-01-30',
         tag: 'Native',
-        details: 'Lorem ipsum... CANCELED! 🥶️'
+        details: 'CANCELED! 🥶️'
       },
       {
         meetup: 'JavaScript MN',
@@ -30,11 +30,11 @@ export const api = (timeout: number = 500): Promise<EventData[]> =>
       },
       {
         meetup: 'JavaScript MN',
-        title: 'Monthy Meetup: Some Cool Talks',
+        title: 'Monthy Meetup: Building Your Own Package',
         url: 'https://www.meetup.com/JavaScriptMN/events/tqfvfqyzfbkc/',
         date: '2018-03-27',
         tag: 'Web',
-        details: 'Lorem ipsum... hopefully it goes well 😉'
+        details: 'It will be awesome 😉'
       }
     ];
 
