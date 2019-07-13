@@ -12,12 +12,20 @@
 
 ## TypeScript Overview
 
-## Pure
+## Demo
+
+### Pure
+
 - Forms
 - Type inference
 - Pure functions
 
-## Event
+### Generics
+
+- List component
+
+### Event
+
 - Promises / async/await
 - Generics
 - `extends`
