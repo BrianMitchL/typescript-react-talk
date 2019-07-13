@@ -15,19 +15,24 @@ export const EventPage: FC<RouteComponentProps<Match>> = ({
 
   useEffect(() => {
     setLoading(true);
-    api().then(data => {
+    api({ search: match }).then(data => {
       setData(data);
       setLoading(false);
     });
-  }, []);
+  }, [match]);
 
   if (loading) {
     return <Loader />;
   }
+
+  if (data.length === 0) {
+    return <p>No events found</p>;
+  }
+
   return (
     <>
       {data.map(d => (
-        <Event key={d.url} {...d} match={match} />
+        <Event key={d.url} {...d} />
       ))}
     </>
   );
