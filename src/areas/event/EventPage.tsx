@@ -1,25 +1,16 @@
-import React, { FC, useEffect, useState } from 'react';
-import { api, EventData } from './api';
+import React, { FC } from 'react';
 import { Event } from './Event';
 import { RouteComponentProps } from 'react-router';
 import { Loader } from './Loader';
 import { Match } from '../../App';
+import { useEvents } from './use-events';
 
 export const EventPage: FC<RouteComponentProps<Match>> = ({
   match: {
     params: { match }
   }
 }) => {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState<EventData[]>([]);
-
-  useEffect(() => {
-    setLoading(true);
-    api({ search: match }).then(data => {
-      setData(data);
-      setLoading(false);
-    });
-  }, [match]);
+  const { loading, data } = useEvents(match);
 
   if (loading) {
     return <Loader />;
