@@ -25,3 +25,4 @@
 - Intersection Types
 
 - Change date type to `Date`
+- Change tag to tag array

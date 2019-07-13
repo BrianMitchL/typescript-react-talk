@@ -2,7 +2,7 @@ import React, { ChangeEventHandler, FC, useState } from 'react';
 import { display } from './simple-helpers';
 
 export const SimpleHelpers: FC = () => {
-  const [text, setText] = useState('Hello JavaScript');
+  const [text, setText] = useState('Hello TypeScript');
   const [num, setNum] = useState(1);
   // const [array, setArray] = useState([]);
   // setArray(['this is just a string']);
