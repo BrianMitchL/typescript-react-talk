@@ -1,20 +1,16 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
 
 export const Pros: FC = () => (
-  <div>
-    <h1>TypeScript Pros</h1>
+  <>
+    <h2>Pros</h2>
 
     <ul>
-      <li>Autocompletion</li>
       <li>Compile time errors</li>
       <li>Stability</li>
-      <li>API documentation</li>
+      <li>Autocompletion</li>
       <li>Tooling</li>
+      <li>Community support</li>
+      <li>API documentation</li>
     </ul>
-
-    <Link to="/typescript/cons" rel="next">
-      Cons
-    </Link>
-  </div>
+  </>
 );

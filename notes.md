@@ -1,5 +1,15 @@
 ## Intro
 
+- Hi, I'm Brian
+- I work on an analytics application
+
+## Problems
+
+- Requirements change
+- Multiple people on a codebase
+- Broken code when refactoring
+- Chasing down bugs
+
 ## TypeScript Overview
 
 ## Pure
