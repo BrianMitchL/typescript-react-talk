@@ -1,10 +1,10 @@
-import React, { Key, ReactChild } from 'react';
+import React, { Key, ReactNode } from 'react';
 
 export interface BaseListItem {
   key: Key;
 }
 
-export type ItemRenderer<T> = (item: T) => ReactChild;
+export type ItemRenderer<T> = (item: T) => ReactNode;
 
 interface ListProps<T> {
   data: T[];
