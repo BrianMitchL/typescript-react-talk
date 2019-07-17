@@ -1,9 +1,6 @@
 export const displayAsDate = (num: number): string => {
   const day: Date = new Date(num * 1000);
   const prefix = day.getTime() < new Date().getTime() ? 'since' : 'until';
-  // if (prefix === 'test') {
-  //   return 'impossible';
-  // }
   return `${prefix} ${day.toLocaleDateString()}`;
 };
 

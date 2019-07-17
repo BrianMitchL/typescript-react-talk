@@ -11,10 +11,10 @@ interface ListProps<T> {
   renderItem: ItemRenderer<T>;
 }
 
-export function List<T extends BaseListItem>({
+export const List = <T extends BaseListItem>({
   data,
   renderItem
-}: ListProps<T>) {
+}: ListProps<T>) => {
   return (
     <div>
       <p>There are {data.length} items in the list!</p>
@@ -25,4 +25,4 @@ export function List<T extends BaseListItem>({
       </ul>
     </div>
   );
-}
+};

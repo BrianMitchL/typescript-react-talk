@@ -10,7 +10,8 @@ export const Pros: FC = () => (
       <li>Autocompletion</li>
       <li>Tooling</li>
       <li>Community support</li>
-      <li>API documentation</li>
+      <li>Documentation</li>
+      <li>API discoverability</li>
     </ul>
   </>
 );

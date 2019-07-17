@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Event } from './Event';
 import { RouteComponentProps } from 'react-router';
-import { Loader } from './Loader';
+import { Loader } from '../Loader/Loader';
 import { Match } from '../../App';
 import { useEvents } from './use-events';
 
@@ -22,8 +22,8 @@ export const EventPage: FC<RouteComponentProps<Match>> = ({
 
   return (
     <>
-      {data.map(d => (
-        <Event key={d.url} {...d} />
+      {data.map((event, index) => (
+        <Event key={event.url} {...event} number={index + 1} />
       ))}
     </>
   );

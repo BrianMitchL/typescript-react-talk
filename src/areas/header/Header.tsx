@@ -20,12 +20,12 @@ const routes: Route[] = [
     title: 'Pure'
   },
   {
-    path: '/generics',
-    title: 'Generics'
-  },
-  {
     path: '/event',
     title: 'Event'
+  },
+  {
+    path: '/generics',
+    title: 'Generics'
   }
 ];
 
