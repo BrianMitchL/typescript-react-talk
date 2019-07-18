@@ -13,7 +13,7 @@ export const EventPage: FC<RouteComponentProps<Match>> = ({
   const { loading, data } = useEvents(match);
 
   if (loading) {
-    return <Loader />;
+    return <Loader width={50} widthUnit="%" />;
   }
 
   if (data.length === 0) {
