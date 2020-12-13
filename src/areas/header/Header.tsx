@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 
 interface Route {
@@ -9,41 +8,43 @@ interface Route {
 const routes: Route[] = [
   {
     path: '/',
-    title: 'Home'
+    title: 'Home',
   },
   {
     path: '/typescript',
-    title: 'TypeScript Overview'
+    title: 'TypeScript Overview',
   },
   {
     path: '/pure',
-    title: 'Pure'
+    title: 'Pure',
   },
   {
     path: '/event',
-    title: 'Event'
+    title: 'Event',
   },
   {
     path: '/generics',
-    title: 'Generics'
-  }
+    title: 'Generics',
+  },
 ];
 
-export const Header: FC<RouteComponentProps> = ({ location }) => (
-  <nav className="uk-navbar-container">
-    <div className="uk-navbar-left">
-      <ul className="uk-navbar-nav">
-        {routes.map(r => (
-          <li
-            key={r.path}
-            className={
-              location.pathname.includes(r.path) ? 'uk-active' : undefined
-            }
-          >
-            <Link to={r.path}>{r.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </nav>
-);
+export function Header({ location }: RouteComponentProps) {
+  return (
+    <nav className="uk-navbar-container">
+      <div className="uk-navbar-left">
+        <ul className="uk-navbar-nav">
+          {routes.map((r) => (
+            <li
+              key={r.path}
+              className={
+                location.pathname.includes(r.path) ? 'uk-active' : undefined
+              }
+            >
+              <Link to={r.path}>{r.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
+}

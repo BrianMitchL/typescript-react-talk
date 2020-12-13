@@ -57,7 +57,7 @@ if (prefix === 'test') {
   - Add multiple tags to npm package event
   ```typescript
   {
-    tag.map(t => (
+    tag.map((t) => (
       <span key={t} className="tag">
         {t}
       </span>
@@ -96,7 +96,7 @@ if (prefix === 'test') {
     data={{
       name: 'Brian',
       age: 1234,
-      key: 'not used, but still on the type'
+      key: 'not used, but still on the type',
     }}
     renderItem={renderPersonString}
   />

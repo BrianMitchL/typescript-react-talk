@@ -15,23 +15,23 @@ export interface ApiOptions {
 
 export const api = ({
   search,
-  timeout = 500
+  timeout = 500,
 }: ApiOptions): Promise<EventData[]> =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     const data: EventData[] = [
       {
         meetup: 'JavaScript MN',
         title: 'Monthy Meetup: React Native, an Introduction',
         url: 'https://www.meetup.com/JavaScriptMN/events/tqfvfqyzdbkc/',
         date: '2018-02-27',
-        tag: 'Native'
+        tag: 'Native',
       },
       {
         meetup: 'JavaScript MN',
         title: 'Monthy Meetup: Building Your Own Package',
         url: 'https://www.meetup.com/JavaScriptMN/events/tqfvfqyzfbkc/',
         date: '2018-03-27',
-        tag: 'Web'
+        tag: 'Web',
       },
       {
         meetup: 'React Minneapolis',
@@ -39,7 +39,7 @@ export const api = ({
         url:
           'https://www.meetup.com/React-Minneapolis-Meetup/events/257861767/',
         date: '2019-06-20',
-        tag: 'Web'
+        tag: 'Web',
       },
       {
         meetup: 'React Minneapolis',
@@ -47,14 +47,14 @@ export const api = ({
         url:
           'https://www.meetup.com/React-Minneapolis-Meetup/events/257861771/',
         date: '2019-07-18',
-        tag: 'Web'
-      }
+        tag: 'Web',
+      },
     ];
 
     setTimeout(() => {
       resolve(
         data.filter(
-          event =>
+          (event) =>
             !search || event.title.toLowerCase().includes(search.toLowerCase())
         )
       );

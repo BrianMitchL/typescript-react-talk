@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { BaseListItem, ItemRenderer, List } from './List';
 
 interface Person extends BaseListItem {
@@ -9,7 +8,7 @@ interface Person extends BaseListItem {
 const people: Person[] = [
   { name: 'Sally', age: 25, key: 'a' },
   { name: 'Fred', age: 41, key: 'b' },
-  { name: 'Anna', age: 32, key: 'c' }
+  { name: 'Anna', age: 32, key: 'c' },
 ];
 
 const renderPersonString: ItemRenderer<Person> = ({ name, age }) => {
@@ -25,7 +24,7 @@ const renderPersonElement: ItemRenderer<Person> = ({ name, age }) => {
     <div
       style={{
         backgroundColor: `hsl(${Math.random() * 360}, 100%, 90%)`,
-        color: 'black'
+        color: 'black',
       }}
     >
       <span style={{ fontSize: '2rem' }}>{name}</span> - {age} years old
@@ -33,7 +32,7 @@ const renderPersonElement: ItemRenderer<Person> = ({ name, age }) => {
   );
 };
 
-export const GenericsPage: FC = () => {
+export function GenericsPage() {
   return (
     <>
       <List data={people} renderItem={renderPersonString} />
@@ -41,4 +40,4 @@ export const GenericsPage: FC = () => {
       <List data={people} renderItem={renderPersonElement} />
     </>
   );
-};
+}

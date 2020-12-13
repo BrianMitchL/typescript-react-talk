@@ -12,7 +12,7 @@ export const useEvents = (search?: string): UseEventsResult => {
 
   useEffect(() => {
     setLoading(true);
-    api({ search }).then(data => {
+    api({ search }).then((data) => {
       setData(data);
       setLoading(false);
     });
@@ -20,6 +20,6 @@ export const useEvents = (search?: string): UseEventsResult => {
 
   return {
     loading,
-    data
+    data,
   };
 };

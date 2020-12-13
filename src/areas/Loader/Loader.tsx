@@ -1,14 +1,18 @@
-import React, { Component, FC } from 'react';
-import { BarLoader, ReactSpinners } from 'react-spinners';
+import { Component, ComponentPropsWithoutRef } from 'react';
+import { BarLoader } from 'react-spinners';
 import './Loader.css';
 
-export const Loader: FC<ReactSpinners.BarLoaderProps> = props => (
-  <div className="Loader">
-    <BarLoader {...props} />
-  </div>
-);
+export function Loader(props: ComponentPropsWithoutRef<typeof BarLoader>) {
+  return (
+    <div className="Loader">
+      <BarLoader {...props} />
+    </div>
+  );
+}
 
-export class LoaderClass extends Component<ReactSpinners.BarLoaderProps> {
+export class LoaderClass extends Component<
+  ComponentPropsWithoutRef<typeof BarLoader>
+> {
   render() {
     return (
       <div className="Loader">

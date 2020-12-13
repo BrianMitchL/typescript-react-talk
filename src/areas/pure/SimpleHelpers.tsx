@@ -1,15 +1,15 @@
-import React, { ChangeEventHandler, FC, useState } from 'react';
+import { ChangeEventHandler, useState } from 'react';
 import { display } from './simple-helpers';
 
-export const SimpleHelpers: FC = () => {
+export function SimpleHelpers() {
   const [text, setText] = useState('Hello TypeScript');
   const [num, setNum] = useState(1);
 
-  const handleNumberChange: ChangeEventHandler<HTMLInputElement> = e => {
+  const handleNumberChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     setNum(Number(e.currentTarget.value));
   };
 
-  const handleTextChange: ChangeEventHandler<HTMLInputElement> = e => {
+  const handleTextChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     setText(e.currentTarget.value);
   };
 
@@ -51,4 +51,4 @@ export const SimpleHelpers: FC = () => {
       </p>
     </>
   );
-};
+}

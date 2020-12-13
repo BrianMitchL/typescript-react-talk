@@ -1,9 +1,8 @@
-import React, { FC } from 'react';
 import {
   BrowserRouter as Router,
   Redirect,
   Route,
-  Switch
+  Switch,
 } from 'react-router-dom';
 import { EventPage } from './areas/event/EventPage';
 import { Home } from './areas/home/Home';
@@ -16,23 +15,25 @@ export interface Match {
   match?: string;
 }
 
-const App: FC = () => (
-  <Router>
-    <>
-      <Route component={Header} />
+function App() {
+  return (
+    <Router>
+      <>
+        <Route component={Header} />
 
-      <div className="uk-container">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/typescript" component={TypeScript} />
-          <Route exact path="/pure" component={SimpleHelpers} />
-          <Route exact path="/event/:match?" component={EventPage} />
-          <Route exact path="/generics" component={GenericsPage} />
-          <Redirect to="/" />
-        </Switch>
-      </div>
-    </>
-  </Router>
-);
+        <div className="uk-container">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/typescript" component={TypeScript} />
+            <Route exact path="/pure" component={SimpleHelpers} />
+            <Route exact path="/event/:match?" component={EventPage} />
+            <Route exact path="/generics" component={GenericsPage} />
+            <Redirect to="/" />
+          </Switch>
+        </div>
+      </>
+    </Router>
+  );
+}
 
 export default App;

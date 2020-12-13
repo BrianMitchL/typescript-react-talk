@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { EventData } from './api';
 import './Event.css';
 
@@ -6,14 +5,7 @@ interface EventProps extends EventData {
   number: number;
 }
 
-export const Event: FC<EventProps> = ({
-  url,
-  title,
-  tag,
-  date,
-  meetup,
-  number
-}) => {
+export function Event({ url, title, tag, date, meetup, number }: EventProps) {
   return (
     <>
       <h2>
@@ -26,4 +18,4 @@ export const Event: FC<EventProps> = ({
       </p>
     </>
   );
-};
+}

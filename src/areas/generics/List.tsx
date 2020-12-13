@@ -1,4 +1,4 @@
-import React, { Key, ReactNode } from 'react';
+import { Key, ReactNode } from 'react';
 
 export interface BaseListItem {
   key: Key;
@@ -13,13 +13,13 @@ interface ListProps<T> {
 
 export const List = <T extends BaseListItem>({
   data,
-  renderItem
+  renderItem,
 }: ListProps<T>) => {
   return (
     <div>
       <p>There are {data.length} items in the list!</p>
       <ul>
-        {data.map(d => (
+        {data.map((d) => (
           <li key={d.key}>{renderItem(d)}</li>
         ))}
       </ul>

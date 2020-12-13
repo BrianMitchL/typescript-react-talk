@@ -1,19 +1,18 @@
-import React, { FC } from 'react';
 import { Event } from './Event';
 import { RouteComponentProps } from 'react-router';
 import { Loader } from '../Loader/Loader';
 import { Match } from '../../App';
 import { useEvents } from './use-events';
 
-export const EventPage: FC<RouteComponentProps<Match>> = ({
+export function EventPage({
   match: {
-    params: { match }
-  }
-}) => {
+    params: { match },
+  },
+}: RouteComponentProps<Match>) {
   const { loading, data } = useEvents(match);
 
   if (loading) {
-    return <Loader width={50} widthUnit="%" />;
+    return <Loader width="50%" />;
   }
 
   if (data.length === 0) {
@@ -27,4 +26,4 @@ export const EventPage: FC<RouteComponentProps<Match>> = ({
       ))}
     </>
   );
-};
+}
